@@ -1,0 +1,147 @@
+<!-- Selector
+    JQuery and $ 
+    jQuery === $
+    The most common use of $ is to select elements 
+    using CSS selectors. $("li") returns a jQuery object; 
+    a jQuery object is fundamentally an array of HTMLElements
+    
+    jQuery#each (iterates through the list of HTMLElements )
+      ex. $li = $("li")
+         ex. $li[0];
+          $li.each(function(i, ele) {
+            console.log(ele);
+          })
+    jQuery#addClass (which adds the class to all the elements. #addClass does the work of iterating through and adding a class to each element)
+          ex. $li.addClass("complete")
+
+    jQuery#removeClass (removes the class from each of the elements)
+          ex. $li.removeClass("incomplete")
+
+    jQuery#toggleClass (removes the class from each element that has it, adds it to any that don't)
+          $li.toggleClass("complete")
+          $li.toggleClass("complete incomplete")
+
+    Adding elements, text, & data 
+      ex.   const $ul = $("ul.todo-list");
+            $ul append("<li>");
+            $("li").last().append("one more task");
+    
+      ex.   $("li").data({complete: false});
+            const $last = $("li").last();
+            
+            $last.data();     //getter
+            $last.data("complete");     //getter for one specific key
+            $last.data("complete", true)  //setter for one key value pair. set the complete to true.
+
+            const $first = $("li").first();
+            $first.attr("class")  
+            $first.attr("class", "incomplete")
+            $first.attr("id", "first")
+            
+-->
+
+<!-- <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.js"></script>
+  
+  <ul>
+    <li>Racecars</li>
+    <li>Lasers</li>
+    <li>Aeroplanes</li>
+  </ul>
+  
+  <script>
+    // Two ways of doing the same thing:
+    
+    console.log("DOM WAY");
+    const listItems = document.querySelectorAll("li");
+    for (let i = 0; i < listItems.length; i++) {
+      console.log(listItems[i].textContent);
+    }
+    
+    console.log("JQUERY WAY");
+    // returns a jQuery object; the leading dollar-sign in front of
+    // $listItems is conventional; it is just part of the variable name.
+    const $listItems = $("li");
+    for (let i = 0; i < $listItems.length; i++) {
+      console.log($listItems[i].textContent);
+    }
+  </script> -->
+  
+  <!-- Traversal
+  
+    HTMLElements have parentElement and children attributes, 
+    there are jQuery#parent, jQuery#children, and jQuery#siblings methods.
+    jQuery#attr method
+  
+   -->
+  <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.js"></script>
+  
+<div>
+  <ul>
+    <li>Racecars</li>
+    <li>Lasers</li>
+    <li>Aeroplanes</li>
+  </ul>
+
+  <p>Something else</p>
+</div>
+
+<script>
+  const $ul = $("ul");
+  $ul.children().attr("style", "background-color: red");
+  $ul.parent().attr("style", "background-color: green");
+  $ul.siblings().attr("style", "color: blue");
+</script> -->
+
+<!-- Inserting and Removing Elements
+  
+-->
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.js"></script>
+
+<div>
+  <ul></ul>
+</div>
+
+<script>
+  const coolThings = [
+    "racecars",
+    "lasers",
+    "aeroplanes"
+  ];
+
+  let i = 0;
+  window.setInterval( () => {
+    const $ul = $("ul");
+    if ($ul.children().length == 10) {
+      // $ul.children() returns a jQuery object containing all the
+      // children; we then call `#remove`, which implicitly iterates
+      // over the set, removing each of them.
+      $ul.children().remove();
+    }
+
+    const li = document.createElement("li");
+    li.textContent = coolThings[i];
+    // jQuery#append is just like HTMLElement#appendChild
+    $ul.append(li);
+
+    i = (i + 1) % 3;
+  }, 1000);
+</script>
+
+<!-- jQuery Getters and Setters
+
+-->
+
+
+<!-- <input type="text" id="cool-input">
+
+<script>
+  window.setInterval( () => {
+    const $coolInput = $("#cool-input");
+
+    if ($coolInput.val() == "racecars") {
+      // Reset the input on them!
+      $coolInput.val("lasers");
+    }
+  }, 100);
+</script> -->
