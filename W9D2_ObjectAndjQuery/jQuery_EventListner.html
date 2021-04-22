@@ -5,7 +5,51 @@ the same as EventTarget#addEventListener
     };
         $("#complete-all").on("click, toggleAll");   
         
-    ex2. 
+    ex2. const toggleToLearn = (e) => {
+        const $li = $(e.currentTarget);
+        $li.toggleClass("complete incomplete")
+      }
+      $("li").on("click", toggleToLearn);
+
+
+    option 1: 
+      const toggleLi = e => {
+          const $li = $(e.target);
+          $li.toggleClas("complete incomplete");
+      }
+      $("ul").on("click", toggleLi);
+
+    option2 : 
+         const toggleLi = e => {
+            const $li = $(e.currentTarget);
+            $li.toggleClas("complete incomplete");
+        }
+        $("ul").on("click", "li", toggleLi);
+
+    Form DEFAULT SETTING - refresh the page
+        
+    ex. const addToLearn = function (e) {
+      e.preventDefault();   //prevent default refreshing page
+
+      const $form = $(e.target);    
+      const $input = $form.find("input[type=text]");
+      const = val = $input.val();
+      $input.val("");       //clear input in form
+      const $newLi = $("<li>");
+      $newLi.text(val);
+      $newLi.addClass("incomplete");
+      $("ul").append($newLi);
+
+    }
+
+    $(".todo-form").on("submit", addToLearn);
+
+
+    $("#cool-thing-form").on("submit", event => {
+    event.preventDefault();
+        
+
+
 -->
     
 <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.js"></script>

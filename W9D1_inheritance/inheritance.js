@@ -1,7 +1,7 @@
 // Object.create
 // Dog.prototype = Object.create(Animal.prototype);
 
-function Animal (name) {
+  function Animal (name) {
     this.name = name;
   };
   
