@@ -1,0 +1,73 @@
+<!-- Props and State
+/this.props and this.state. Both are objects 
+/representing data that the component needs 
+/in order to render.
+
+--- Props ---
+A component should never change its own props.
+
+// app.jsx
+import Dog from "./dog";
+
+const App = () => <Dog name="Fido" breed="Greyhound"></Dog>;
+
+// dog.jsx
+class Dog extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <div>
+        Name: {this.props.name}, Breed: {this.props.breed}
+      </div>
+    );
+  }
+}
+
+export default Dog;
+-------------------------
+It renders to HTML:
+
+<div>Name: Fido, Breed: Greyhound</div>
+-->
+
+<!-- State
+
+--- this.state ---
+can be altered by the component itself
+
+class WordInput extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      word: ""
+    };
+    this.updateWord = this.updateWord.bind(this);
+  }
+
+  updateWord(event) {
+    this.setState({ word: event.currentTarget.value });
+  }
+
+  render() {
+    return (
+      <div>
+        <input onChange={this.updateWord} value={this.state.word} />
+        <span>The word is: {this.state.word}</span>
+      </div>
+    );
+  }
+}
+
+this.setState()  triger re-render;
+this.state = does not;
+
+--- setState takes an optional callback as a second argument.  ---
+    updateWord(event) {
+    this.setState({word: event.currentTarget.value}, () => {
+        console.log(this.state.word);
+    });
+    }
+-->

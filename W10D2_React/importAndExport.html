@@ -1,0 +1,42 @@
+<!-- Importing and Exporting
+    Exporting: 
+
+ex. ES5    module.exports = TodoActions;
+    ES6.1   export { receiveTodo, fetchTodos, createTodo };
+    
+    ES6.2   export const receiveTodo = todo => ({
+            type: "RECEIVE_TODO",
+            todo
+            });
+
+            export const fetchTodos = () => ({
+            type: "FETCH_TODOS"
+            });
+
+            export const createTodo = todo => ({
+            type: "CREATE_TODO",
+            todo
+            });
+    Export one item:
+            export default TodoList;
+
+    or.     export default () => {
+            // function body
+            };        
+-->
+
+<!-- IMPORTING 
+
+    ES6
+    import TodoList from './todo_list';
+    import App from './app';
+
+    OR 
+    import { createTodo, receiveTodo } from './todo_actions';
+    /The curly braces are required when we import from a file 
+    /with multiple exports and need to specify which particular 
+    /exports we want.
+
+    IMPORT ALL "as" keyword alias wrap them into a single
+    import * as TodoActions from './todo_actions';
+-->

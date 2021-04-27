@@ -1,0 +1,15 @@
+{
+  "name": "W10D2_React",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "webpack --mode=development"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+  
+
+}

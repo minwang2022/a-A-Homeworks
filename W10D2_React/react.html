@@ -1,0 +1,143 @@
+<!-- import React from 'react';
+    class ClikckCounter extends React.Component {
+        constructor(props) {
+            super(props);
+            this.state = { count: 0};
+        }
+    }
+
+    export default ClickCounter;
+
+-->
+<!-- RENDER FUCNTION 
+
+
+    this.setState({count: this.state.count + 1})
+
+
+    render() {
+        return (
+            <div>
+                <button>CLICK ME!!</button>
+                <span> {this.state.count}</span>   //{} like erb tab for ruby
+            </div>
+        );
+    }
+
+    must return a single React element;
+-->
+
+<!-- EVENTS 
+ onClick, onChange,preventDefault;
+ click(event) {
+     event.preventDefault();
+     this.setState({count: this.state.count + 1});
+ }
+
+    render() {
+        return (
+            <div>
+                <button onClick = {this.click.bind(this)}>CLICK ME!!</button>
+                <span> {this.state.count}</span>   //{} like erb tab for ruby
+            </div>
+        );
+    }
+
+
+    ReactDOM.render will replace entire content of target HTML element;
+
+    entry.jsx 
+
+    document.addEventListener("DOMContentLoaded", ()) => {
+        const root = document.getElementById("root");
+        ReactDOM.render(<ClickCounter />, root);
+    });
+-->
+
+<!--  TRANSPILATION    JSX 
+    <span> {this.state.count}</span> 
+    /in raw JS: React.createElement("span", {}, this.state.count)
+
+    BABEL/JSX 
+    /need node packages:
+    babel-core 
+    babel-preset-react
+    babel-preser-es2015
+    babel-loader
+
+    npm install --save (to update package.json)
+    node_modules 
+-->
+<!-- 
+    class ClikckCounter extends React.Component {
+        constructor(props) {
+            super(props);
+            this.state = { count: 0, previousCounts:[]};
+        }
+    }
+    reset(event) {
+        event.preventDefault();
+        const previousCounts = this.state.previousCounts;
+        previousCounts.push(this.state.count);
+        this.setState({ count: 0, previousCounts})
+    }
+      render() {
+        return (
+            <div>
+                <button onClick = {this.click.bind(this)}>CLICK ME!!</button>
+                <span> {this.state.count}</span>   //{} like erb tab for ruby
+                <br />
+                <button onClick={this.reset.bind(this)}>Reset!</button>
+                <Counts previousCount= {this.state.previousCounts/>
+               // <ul>
+                   // {
+                    //    this.state.previousCounts.map(count => <li>{count}</li>)
+                    //}
+               // </ul>
+            </div>
+        );
+    }
+
+    /Counts Class
+
+    import React frokm 'react';
+
+    class Counts extends React.Component {
+
+        ---React Lifecycle Method ---
+        componentWillMount() {debugger}
+        componentDidMount() {debugger}
+        componentWillReceiveProps(nextProps){debugger}
+        componentWillUpdate(nextProps, nextState){debugger}
+        componentDidUpdate(prevProps, prevState) {debuger}
+        componentWillUnmount(){debugger}
+        constructor (props) {
+            super(props);
+        }
+
+        render() {
+            return (
+                <ul>
+                   {
+                        this.props.previousCounts.map(count => <li>{count}</li>)
+                    }
+                </ul>
+            )
+        }
+
+
+        --- OR ---
+        const Counts = ({previousCounts}) => (
+            <ul>
+                {
+                    previousCounts.previousCounts.map((count, idx) => <li key={idx}>{count}</li>)
+                }
+            </ul>
+        );
+        
+    }
+    export default Counts;
+
+
+    ./frontEnd/
+ -->

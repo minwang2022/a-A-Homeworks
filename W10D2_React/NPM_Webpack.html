@@ -1,0 +1,61 @@
+<!-- Node Package Manager (NPM)
+    node modules  / npm install webpack -g
+-->
+
+<!-- Generating package.json with npm init
+    npm init --yes
+    /This creates a package.json file using default boilerplate from the --yes flag. It should look something like this:
+
+    {
+    "name": "test",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+    }
+-->
+
+<!-- Installing Packages
+        /installing NPM packages such as react and redux via the command line:
+        npm install <package_name>
+    ex. npm install react redux
+
+        /adds the following to your app's package.json:
+
+        "dependencies": {
+            "react": "^15.3.0",
+            "redux": "^3.5.2"
+        },
+
+    /You can use the --save-dev flag to specify packages for your app's development
+    /environment only if you are using different packages for your development and 
+    /production servers.
+    
+    download all its dependencies in one fell swoop by running:
+    npm install
+-->
+
+<!-- Add a Webpack Script
+    /To create a webpack script, add the following attribute 
+    /to your package.json:
+
+    "scripts": {
+        "webpack": "webpack --mode=development",
+    },
+
+    npm run webpack
+-->
+
+<!-- Summary
+npm init --yes: Initializes an app with NPM by generating a boilerplate package.json.
+npm install <package_name>: Installs and lists a NPM package as a dependency in a package.json.
+npm install: Downloads all JavaScript dependencies listed in a package.json.
+Add a webpack script to enable npm run webpack.
+
+
+ -->
