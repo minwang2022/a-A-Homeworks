@@ -4,6 +4,6 @@ import Calculator from './calculator.jsx';
 
 
 document.addEventListener("DOMContentLoaded", () => {
-  const root = document.getElementById("root");
-  ReactDOM.render(<Calculator/>, root);
+  const main = document.getElementById("main");
+  ReactDOM.render(<Calculator/>, main);
 });

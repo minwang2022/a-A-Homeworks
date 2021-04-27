@@ -14,14 +14,16 @@ class Calculator extends React.Component {
     }
   
    
-    setNum1(e) {
-     this.setState({num1: e.target.value})
+    setNum1(e){
+      const num1 = e.target.value ? parseInt(e.target.value) : "";
+      this.setState({ num1 });
     }
-
-    setNum2(e) {
-      this.setState({num1: e.target.value})
+  
+    setNum2(e){
+      const num2 = e.target.value ? parseInt(e.target.value) : "";
+      this.setState({ num2 });
     }
-
+    
     add(e){
       e.preventDefault();
       const result = this.state.num1 + this.state.num2;
